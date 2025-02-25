@@ -152,3 +152,74 @@ zokou({
     await repondre("I am unable to generate responses\n\n" + e.message);
   }
 });
+zokou({
+  nomCom: "gemini2",
+  aliases: ["gpto4", "gemni", "gpt2", "gpt3"],
+  reaction: '🚇',
+  categorie: "AI"
+},async (_0x459d0f, _0x58b776, _0x13dd55) => {
+  const {
+    repondre: _0x375278,
+    arg: _0x57e406,
+    ms: _0x381fb4
+  } = _0x13dd55;
+  try {
+    if (!_0x57e406 || _0x57e406.length === 0) {
+      return _0x375278("Hello, I am *GEMINI AI*.\n\n How can I assist you today?");
+    }
+    const _0x3ecfb3 = _0x57e406.join(" ");
+    const _0x5d81d9 = await fetch("https://api.diioffc.web.id/api/ai/gemini?query=" + encodeURIComponent(_0x3ecfb3));
+    const _0x5b2adb = await _0x5d81d9.json();
+    if (_0x5b2adb.status && _0x5b2adb.result && _0x5b2adb.result.message) {
+      const _0x58c38d = _0x5b2adb.result.message;
+      const _0x138484 = {
+        deviceListMetadata: {},
+        deviceListMetadataVersion: 0x2
+      };
+      const _0x313a56 = {
+        text: _0x58c38d
+      };
+      const _0x5c8ed3 = {
+        title: '',
+        subtitle: '',
+        hasMediaAttachment: false
+      };
+      const _0x128a35 = {
+        buttons: []
+      };
+      const _0xd1fe97 = generateWAMessageFromContent(_0x459d0f, {
+        'viewOnceMessage': {
+          'message': {
+            'messageContextInfo': _0x138484,
+            'interactiveMessage': proto.Message.InteractiveMessage.create({
+              'body': proto.Message.InteractiveMessage.Body.create(_0x313a56),
+              'footer': proto.Message.InteractiveMessage.Footer.create({
+                'text': "> *POWERED BY GAGA-MD*"
+              }),
+              'header': proto.Message.InteractiveMessage.Header.create(_0x5c8ed3),
+              'nativeFlowMessage': proto.Message.InteractiveMessage.NativeFlowMessage.create(_0x128a35),
+              'contextInfo': {
+                'forwardingScore': 0x5,
+                'isForwarded': true,
+                'forwardedNewsletterMessageInfo': {
+                  'newsletterJid': "120363238139244263@newsletter",
+                  'newsletterName': "GAGA-MD",
+                  'serverMessageId': 0x8f,
+                  'sourceUrl': ""
+                }
+              }
+            })
+          }
+        }
+      }, {});
+      await _0x58b776.relayMessage(_0x459d0f, _0xd1fe97.message, {
+        'messageId': _0xd1fe97.key.id
+      });
+    } else {
+      throw new Error("Invalid response from the API.");
+    }
+  } catch (_0xd45488) {
+    console.error("Error getting response:", _0xd45488.message);
+    _0x375278("Error getting response.");
+  }
+});
