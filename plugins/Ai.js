@@ -593,7 +593,7 @@ keith({
   }
 });
 
-keith({
+zokou({
   nomCom: "tempmail",
   aliases: ['mail', 'temp'],
   reaction: '📧',
@@ -691,7 +691,7 @@ You can use this email for temporary purposes. I will notify you if you receive 
     }, { quoted: messageQuote });
   }
 });
-keith({
+zokou({
   nomCom: "wiki",
   aliases: ["wikipedia", "wikipeda"],
   reaction: '⚔️',
@@ -728,8 +728,8 @@ keith({
     repondre(`Got 404. I did not find anything!`);
   }
 });
-keith({
-  nomCom: "lyrics",
+zokou({
+  nomCom: "lyricss",
   aliases: ["mistari", "lyric"],
   reaction: '⚔️',
   categorie: "search"
