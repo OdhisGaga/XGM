@@ -257,7 +257,7 @@ zokou({
 
 
 
-keith({
+zokou({
   nomCom: "technews",
   reaction: '📰',
   categorie: 'search'
@@ -274,7 +274,7 @@ keith({
       text: news,
       contextInfo: {
         externalAdReply: {
-          title: "ALPHA-MD TECH NEWS",
+          title: "GAGA-MD TECH NEWS",
           body: "keep learning", 
           thumbnailUrl: thumbnail, 
           sourceUrl: conf.GURL, 
@@ -291,7 +291,7 @@ keith({
 });
 
 
-keith({
+zokou({
   nomCom: "bible",
   reaction: '🎎',
   categorie: "search"
@@ -305,7 +305,7 @@ keith({
         externalAdReply: {
           title: "Bible Reference Required",
           body: "Please provide a book, chapter, and verse.",
-          thumbnailUrl: "https://files.catbox.moe/zt9ie6.jpg", // Replace with a suitable thumbnail URL
+          thumbnailUrl: "", // Replace with a suitable thumbnail URL
           sourceUrl: conf.GURL,
           mediaType: 1,
           showAdAttribution: true,
@@ -323,7 +323,7 @@ keith({
           externalAdReply: {
             title: "Invalid Bible Reference",
             body: "Please provide a valid book, chapter, and verse.",
-            thumbnailUrl: "https://files.catbox.moe/zt9ie6.jpg", // Replace with a suitable thumbnail URL
+            thumbnailUrl: "", // Replace with a suitable thumbnail URL
             sourceUrl: conf.GURL,
             mediaType: 1,
             showAdAttribution: true,
@@ -334,7 +334,7 @@ keith({
     
     const data = response.data;
     const messageText = `
-ᬑ *ALPHA HOLY BIBLE* ᬒ
+ᬑ *GAGA HOLY BIBLE* ᬒ
 
 ⧭ *_WE'RE READING:_* ${data.reference}
 
@@ -344,17 +344,17 @@ keith({
 
 ⧭ *_LANGUAGE:_* ${data.translation_name}
 ╭────────────────◆
-│ *_Powered by ${conf.OWNER_NAME}*
+│ *_Powered by XGAGA BOTS*
 ╰─────────────────◆ `;
     
     await zk.sendMessage(dest, {
       text: messageText,
       contextInfo: {
         externalAdReply: {
-          title: "ALPHA-MD HOLY BIBLE",
+          title: "GAGA-MD HOLY BIBLE",
           body: `We're reading: ${data.reference}`,
           mediaType: 1,
-          thumbnailUrl: "https://files.catbox.moe/zt9ie6.jpg", 
+          thumbnailUrl: "", 
           sourceUrl: conf.GURL,
           showAdAttribution: true, 
         },
@@ -368,7 +368,7 @@ keith({
         externalAdReply: {
           title: "Error Fetching Bible Passage",
           body: "Please try again later.",
-          thumbnailUrl: "https://files.catbox.moe/zt9ie6.jpg", // Replace with a suitable thumbnail URL
+          thumbnailUrl: "", // Replace with a suitable thumbnail URL
           sourceUrl: conf.GURL,
           mediaType: 1,
           showAdAttribution: true,
