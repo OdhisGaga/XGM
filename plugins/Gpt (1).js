@@ -110,7 +110,7 @@ zokou({
 });
 
 zokou({
-  nomCom: "gemini",
+  nomCom: "gemini2",
   aliases: ["gpto4", "gemni", "gpt2", "gpt3"],
   reaction: '🚇',
   categorie: "AI"
@@ -153,8 +153,8 @@ zokou({
   }
 });
 zokou({
-  nomCom: "gemini2",
-  aliases: ["gpto4", "gemni", "gpt2", "gpt3"],
+  nomCom: "gemini",
+  : ["gpto4", "gemni", "gpt2", "gpt3"],
   reaction: '🚇',
   categorie: "AI"
 },async (_0x459d0f, _0x58b776, _0x13dd55) => {
@@ -223,3 +223,77 @@ zokou({
     _0x375278("Error getting response.");
   }
 });
+
+
+zokou({
+  nomCom: "ilama",
+  aliases: ["llama"],
+  reaction: '🤗',
+  categorie: 'AI'
+};
+ async (_0x28aa27, _0x7dfe40, _0x123970) => {
+  const {
+    repondre: _0x5e622d,
+    arg: _0x33cb7c,
+    ms: _0x389bc6
+  } = _0x123970;
+  try {
+    if (!_0x33cb7c || _0x33cb7c.length === 0) {
+      return _0x5e622d("Hello am *GAGA-MD.* an AI developed by Gaga.\n\n What help can I offer you today?");
+    }
+    const _0x1a66fc = _0x33cb7c.join(" ");
+    const _0x49794f = await fetch("https://api.gurusensei.workers.dev/llama?prompt=" + _0x1a66fc);
+    const _0x405b7a = await _0x49794f.json();
+    if (_0x405b7a && _0x405b7a.response && _0x405b7a.response.response) {
+      const _0x2da44f = _0x405b7a.response.response;
+      const _0x20c797 = {
+        deviceListMetadata: {},
+        deviceListMetadataVersion: 0x2
+      };
+      const _0xc1d67e = {
+        text: _0x2da44f
+      };
+      const _0x1d89a4 = {
+        title: '',
+        subtitle: '',
+        hasMediaAttachment: false
+      };
+      const _0x52fd13 = {
+        buttons: []
+      };
+      const _0x5c8da7 = generateWAMessageFromContent(_0x28aa27, {
+        'viewOnceMessage': {
+          'message': {
+            'messageContextInfo': _0x20c797,
+            'interactiveMessage': proto.Message.InteractiveMessage.create({
+              'body': proto.Message.InteractiveMessage.Body.create(_0xc1d67e),
+              'footer': proto.Message.InteractiveMessage.Footer.create({
+                'text': "> *POWERED BY GAGA-MD*"
+              }),
+              'header': proto.Message.InteractiveMessage.Header.create(_0x1d89a4),
+              'nativeFlowMessage': proto.Message.InteractiveMessage.NativeFlowMessage.create(_0x52fd13),
+              'contextInfo': {
+                'forwardingScore': 0x5,
+                'isForwarded': true,
+                'forwardedNewsletterMessageInfo': {
+                  'newsletterJid': "120363238139244263@newsletter",
+                  'newsletterName': "GAGA-MD",
+                  'serverMessageId': 0x8f,
+                  'sourceUrl': ""
+                }
+              }
+            })
+          }
+        }
+      }, {});
+      await _0x7dfe40.relayMessage(_0x28aa27, _0x5c8da7.message, {
+        'messageId': _0x5c8da7.key.id
+      });
+    } else {
+      throw new Error("Invalid response from the API.");
+    }
+  } catch (_0x49bf10) {
+    console.error("Error getting response:", _0x49bf10.message);
+    _0x5e622d("Error getting response.");
+              }
+             }); 
