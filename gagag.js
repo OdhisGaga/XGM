@@ -389,7 +389,7 @@ if (conf.AUTO_LIKE_STATUS === "yes") {
                     continue;
                 }
 
-                // React to the status with a green heart
+                // React to the status with a black heart
                 await zk.sendMessage(message.key.remoteJid, {
                     react: {
                         key: message.key,
