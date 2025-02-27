@@ -81,7 +81,7 @@ setTimeout(() => {
         const sockOptions = {
             version,
             logger: pino({ level: "silent" }),
-            browser: ['BELTAH-MD', "safari", "1.0.0"],
+            browser: ['GAGA-MD', "safari", "1.0.0"],
             printQRInTerminal: true,
             fireInitQueries: false,
             shouldSyncHistoryMessage: true,
@@ -147,7 +147,7 @@ setInterval(async () => {
 
     await zk.rejectCall(callId, callerId);
     await zk.sendMessage(callerId, {
-      text: "*sᴏʀʀʏ!! ɴᴏ ᴄᴀʟʟs ᴀʟʟᴏᴡᴇᴅ, ᴋɪɴᴅʟʏ ᴛᴇxᴛ.*\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴏᴘᴋɪᴅ ʜᴀᴄᴋɪɴɢ ᴛᴇᴀᴍ."
+      text: "❗📵I AM GAGA MD | I REJECT THIS CALL BECAUSE MY OWNER IS BUSY. KINDLY SEND TEXT INSTEAD``\n\n> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴘᴏᴘᴋɪᴅ ʜᴀᴄᴋɪɴɢ ᴛᴇᴀᴍ."
     });
   }
 });
