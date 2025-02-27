@@ -3,13 +3,13 @@
   "name": "Xg md",
   "version": "2.0.0",
   "description": "",
-  "main": "rich.js",
+  "main": "gaga.js",
     "type": "common.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "s": "node rich.js", 
-    "zokou": "pm2 start rich.js --attach --max-memory-restart 490M",
-    "alpha": "pm2 start rich.js --attach",
+    "s": "node gaga.js", 
+    "zokou": "pm2 start gaga.js --attach --max-memory-restart 490M",
+    "alpha": "pm2 start gaga.js --attach",
     "c": "tsc"
     },
   "keywords": [
