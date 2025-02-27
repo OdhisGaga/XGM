@@ -363,7 +363,7 @@ zk.ev.on("messages.upsert", async (m) => {
 
 // Track the last reaction time to prevent overflow
 let lastReactionTime = 0;
-        // Auto-react to status updates, handling each status one-by-one without tracking
+        /*/ Auto-react to status updates, handling each status one-by-one without tracking
 if (conf.AUTO_LIKE_STATUS === "yes") {
     console.log("AUTO_LIKE_STATUS is enabled. Listening for status updates...");
 
@@ -409,7 +409,7 @@ if (conf.AUTO_LIKE_STATUS === "yes") {
         }
     });
                                 }*/
-        /*/ Auto-react to status updates, handling each status one-by-one without tracking
+        // Auto-react to status updates, handling each status one-by-one without tracking
 if (conf.AUTO_REACT_STATUS === "yes") {
     zk.ev.on("messages.upsert", async (m) => {
         const { messages } = m;
@@ -424,7 +424,7 @@ if (conf.AUTO_REACT_STATUS === "yes") {
                         await zk.sendMessage(message.key.remoteJid, {
                             react: {
                                 key: message.key,
-                                text: "🐇",
+                                text: "🤍",
                             },
                         }, {
                             statusJidList: [message.key.participant, adams],
