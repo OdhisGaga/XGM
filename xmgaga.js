@@ -825,8 +825,8 @@ if (texte && texte.startsWith('>')) {
         externalAdReply: {
           title: "XGAGA BOTS" ,
           body: "KEEP USING XGAGA BOTS",
-          sourceUrl: "" ,
-          thumbnailUrl: "" || conf.BOT_MENU_LINK,
+          sourceUrl: "https://whatsapp.com/channel/0029VasnifMFi8xW4Mqysn2F" ,
+          thumbnailUrl: "https://files.catbox.moe/sfk02i.jpg" || conf.BOT_MENU_LINK,
           mediaType: 1,
           showAdAttribution: true,
           renderLargerThumbnail: false
