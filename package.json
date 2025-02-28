@@ -8,8 +8,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "s": "node xmgaga.js", 
-    "beltahinc": "pm2 start inx.js --attach --max-memory-restart 490M",
-    "gaga": "pm2 start xgaga.js --attach",
+    "zokou": "pm2 start xmgaga.js --attach --max-memory-restart 490M",
+    "rich": "pm2 start xgaga.js --attach",
     "c": "tsc"
     },
   "keywords": [
@@ -18,9 +18,9 @@
     "Gaga-Md",
     "whatsapp",
     "whatsapp-bot",
-    "Gaga"
+    "Midumbgaga"
    ],
-  "author": "MidumbaGaga",
+  "author": "Midumbgaga",
 "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
