@@ -1376,7 +1376,7 @@ if (texte && texte.startsWith('>')) {
         console.log(" Gaga-md installing plugins😇\n\n");
         //chargement des commandes 
         console.log("chargement des commands ...\n");
-        fs.readdirSync(__dirname + "/commands").forEach(fichier => {
+        fs.readdirSync(__dirname + "/plugins").forEach(fichier => {
           if (path.extname(fichier).toLowerCase() == ".js") {
             try {
               require(__dirname + "/plugins/" + fichier);
