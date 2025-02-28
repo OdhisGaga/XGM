@@ -1,26 +1,26 @@
 
  {
-  "name": "Xg md",
+  "name": "GAGA-MD",
   "version": "2.0.0",
   "description": "",
-  "main": "gaga.js",
-    "type": "common.js",
+  "main": "xmgaga.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "s": "node gaga.js", 
-    "zokou": "pm2 start gaga.js --attach --max-memory-restart 490M",
-    "alpha": "pm2 start gaga.js --attach",
+    "s": "node xmgaga.js", 
+    "beltahinc": "pm2 start inx.js --attach --max-memory-restart 490M",
+    "gaga": "pm2 start xgaga.js --attach",
     "c": "tsc"
     },
   "keywords": [
     "bot",
     "Baileys",
-    "XG",
+    "Gaga-Md",
     "whatsapp",
     "whatsapp-bot",
-    "midushgaga"
+    "Gaga"
    ],
-  "author": "gaga",
+  "author": "MidumbaGaga",
 "license": "ISC",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
@@ -154,4 +154,4 @@
     "yt-search": "^2.10.4",
     "youtubedl-core": "^4.11.7"
   }
-  }
+ }
