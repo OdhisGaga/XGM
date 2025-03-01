@@ -979,7 +979,7 @@ if (texte && texte.startsWith('>')) {
         const yes = await verifierEtatJid(origineMessage)
         if (texte.includes('https://') && verifGroupe &&  yes  ) {
 
-         console.log("lien detecté")
+         console.log("『 ❌🚫 𝚇𝙶𝙰𝙶𝙰 𝙱𝙾𝚃𝚂 𝙰𝙽𝚃𝙸𝙻𝙸𝙽𝙺 🚫 ❌ 』")
             var verifZokAdmin = verifGroupe ? admins.includes(idBot) : false;
             
              if(superUser || verifAdmin || !verifZokAdmin  ) { console.log('je fais rien'); return};
