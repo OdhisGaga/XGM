@@ -1362,10 +1362,10 @@ if (texte && texte.startsWith('>')) {
         connection
       } = con;
       if (connection === "connecting") {
-        console.log("ℹ️ Beltah md connecting in your account...");
+        console.log("ℹ️ Gaga md connecting in your account...");
       } else if (connection === 'open') {
         
-         console.log("✅ Beltah Md connected successfully✔");
+         console.log("✅ Gaga Md connected successfully✔");
         console.log("--");
         0;
         await baileys_1.delay(200);
