@@ -195,7 +195,7 @@ zk.ev.on('call', async (callData) => {
     if (currentTime - lastTextTime >= messageDelay) {
       // Send the rejection message if the delay has passed
       await client.sendMessage(callerId, {
-        text: conf.ANTICALL_MSG
+        text:"❗📵I AM GAGA MD | I REJECT THIS CALL BECAUSE MY OWNER IS BUSY. KINDLY SEND TEXT INSTEAD``\n\n> keep using xgaga bots."
       });
 
       // Update the last text time
