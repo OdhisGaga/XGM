@@ -16,57 +16,44 @@ zokou({
   if (msgRepondu) {
     console.log(msgRepondu);
 
-    // If there is an image message
-    if (msgRepondu.imageMessage) {
-      try {
-        // Provide response asking the user to send the image with an instruction
-        if (!text) {
-          return repondre("Please provide an instruction with the image.");
-        }
-
-        // Acknowledge image receipt and instruction
-        await repondre("_A moment, Gaga md is analyzing contents of the image..._");
-
-        // Download and save the image
-        const fdr = await zk.downloadAndSaveMediaMessage(msgRepondu.imageMessage);
-
-        // Upload the image to a hosting platform (e.g., gemini)
-        const fta = await uploadtogemini(fdr);
-
-        // Send request to the Gemini API with the image and instruction
-        const genAI = new GoogleGenerativeAI("AIzaSyAlIHZ7BaC9xu_KE8zL8OHSR3TVTeVYxW8");
-       //try these api key
-        
-  try {
-    let data = await axios.get("https:api.dreaded.site/api/gemini-vision?url=${fta}&instruction=${text}"); 
-        
-        // Function to convert URL to generative part
-        async function urlToGenerativePart(url, mimeType) {
-          const response = await axios.get(url, { responseType: 'arraybuffer' });
-          const data = Buffer.from(response.data).toString('base64');
-
-          return { inlineData: { data, mimeType } };
-        }
-
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const imageUrl = fta;
-        const image = [await urlToGenerativePart(imageUrl, 'image/jpeg')];
-
-        const result = await model.generateContent([text, ...image]);
-        const response = await result.response;
-        const resp = response.text();
-
-        await repondre(resp);
-      } catch (e) {
-        // Handle any errors that occur during image processing
-        repondre("I am unable to analyze images at the moment. Error: " + e.message);
-      }
-    } else {
-      // If no image is provided, ask the user to provide an image
-      return repondre("Please provide an image to analyze.");
-    }
-  } else {
-    // If no message was received
-    return repondre("No image message received. Please send an image.");
+    // Check if the user has provided both an image and an instruction
+  if (!msg || !instruction) {
+    message.reply("You need to tag an image and provide some instructions. Either you did not give an instruction or did not tag an image.");
+    return;
   }
-});
+
+  // Check if the message contains an image
+  let imageMessage;
+  if (msg.imageMessage) {
+    imageMessage = msg.imageMessage;
+  } else {
+    message.reply("You have not tagged an image.");
+    return;
+  }
+
+  try {
+    // Download the image from the message
+    let downloadedImage = await client.downloadAndSaveMediaMessage(imageMessage);
+
+    // Upload the image to imgur
+    let imageUrl = await uploadToImgur(downloadedImage);
+
+    // Notify the user that the image is being analyzed
+    message.reply("Please wait, the AI is analyzing the image...");
+
+    // Call an external API to analyze the image based on the provided instruction
+    let analysisResult = await (await fetch(`https://bk9.fun/ai/geminiimg?url=${imageUrl}&q=${instruction}`)).json();
+
+    // Send the analysis result to the user
+    const response = {
+      text: analysisResult.BK9  // Assuming BK9 contains the analysis result
+    };
+
+    await client.sendMessage(message.chat, response, {
+      quoted: message
+    });
+
+  } catch (error) {
+    message.reply("An error occurred: " + error);
+  }
+};
