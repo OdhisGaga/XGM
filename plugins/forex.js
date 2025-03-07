@@ -50,7 +50,7 @@ zokou({
     try {
       _0x4ee850.sendMessage(_0x48d603, {
         'video': {
-          'url': _0x2f3fd2
+          'url': "https://files.catbox.moe/sfk02i.jpg"
         },
         'caption': _0x2313df + _0x7a5179,
         'footer': "*Powered by Xgaga bots*",
