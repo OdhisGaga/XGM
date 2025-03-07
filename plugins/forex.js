@@ -44,7 +44,7 @@ zokou({
     }
     _0x7a5179 += "\n*╰═════════════⊷* \n";
   }
-  _0x7a5179 += "\n\n*—— Channel link: ——*\n\nhttps://whatsapp.com/channel/0029VaNRcHSJP2199iMQ4W0l\n  \n*——————————————————————————————*\n";
+  _0x7a5179 += "\n\n*—— Channel link: ——*\n\nhttps://whatsapp.com/channel/0029VasnifMFi8xW4Mqysn2F\n  \n*——————————————————————————————*\n";
   var _0x2f3fd2 = _0x553074();
   if (_0x2f3fd2.match(/\.(mp4|gif)$/i)) {
     try {
