@@ -1,191 +1,85 @@
-const { zokou } = require("../framework/zokou");
-const fetch = require("node-fetch");
- zokou({ nomCom: "forex1", categorie: 'Forex', reaction: "📣" }, async (dest, zk, commandeOptions) => {
-  zokou( {
-    nomCom: "forex1",
-    category: "forex",
-    desc: "Fetches the latest forex news",
-    filename: __filename,
-    use: "forexnews",
-  },
-  async (message) => {
+//gaga
+
+const {
+  zokou
+} = require(__dirname + '/../framework/zokou');
+const {
+  format
+} = require(__dirname + '/../framework/mesfonctions');
+const os = require('os');
+const moment = require("moment-timezone");
+const s = require(__dirname + "/../set");
+zokou({
+  'nomCom': "menu2",
+  'categorie': "General"
+}, async (_0x48d603, _0x4ee850, _0x3ea708) => {
+  let {
+    ms: _0x170501,
+    repondre: _0x568ebc,
+    prefixe: _0xfe1133,
+    nomAuteurMessage: _0x14e85c,
+    mybotpic: _0x553074
+  } = _0x3ea708;
+  let {
+    cm: _0xd029dc
+  } = require(__dirname + "/../framework//zokou");
+  var _0x556c57 = {};
+  var _0x3a755b = "public";
+  if (s.MODE.toLocaleLowerCase() != 'yes') {
+    _0x3a755b = "private";
+  }
+  _0xd029dc.map(async (_0x525567, _0x54da91) => {
+    if (!_0x556c57[_0x525567.categorie]) {
+      _0x556c57[_0x525567.categorie] = [];
+    }
+    _0x556c57[_0x525567.categorie].push(_0x525567.nomCom);
+  });
+  moment.tz.setDefault('Asia/Karachi');
+  let _0x2313df = "\n╭────〖 *XGAGA-BOTS* 〗────╮\n│﹄ *Prefix* : " + s.PREFIXE + "\n│﹄ *Owner* : " + s.OWNER_NAME + "\n│﹄ *Mode* : " + _0x3a755b + "\n│﹄ *Commands* : " + _0xd029dc.length + " \n│﹄ *Ram* : " + format(os.totalmem() - os.freemem()) + '/' + format(os.totalmem()) + "\n│﹄ *Developer* : Gaga\n│﹄ *Version* : freeyond\n╰─────{ *XGAGA BOTS* }─────o: \n\n";
+  let _0x7a5179 = "  \n\n*GAGA.BOTZ Commands :*\n◇                             ◇\n";
+  for (const _0x7b5d9 in _0x556c57) {
+    _0x7a5179 += "*o:* *" + _0x7b5d9 + "* *o:*";
+    for (const _0x4bd5be of _0x556c57[_0x7b5d9]) {
+      _0x7a5179 += "\n *|* " + s.PREFIXE + " " + _0x4bd5be;
+    }
+    _0x7a5179 += "\n*╰═════════════⊷* \n";
+  }
+  _0x7a5179 += "\n\n*—— Channel link: ——*\n\nhttps://whatsapp.com/channel/0029VaNRcHSJP2199iMQ4W0l\n  \n*——————————————————————————————*\n";
+  var _0x2f3fd2 = _0x553074();
+  if (_0x2f3fd2.match(/\.(mp4|gif)$/i)) {
     try {
-      const apiUrl =
-        "https://api.polygon.io/v2/reference/news?apiKey=Y4iTYoJANwppB8I3Bm4QVWdV5oXlvc45";
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      if (!data.results || data.results.length === 0) {
-        return message.send("*No forex news available at the moment.*");
-      }
-
-      const articles = data.results;
-      let output = "";
-      articles.forEach((article, index) => {
-        output += `*Title:* ${article.title}\n`;
-        output += `*Publisher:* ${article.publisher.name}\n`;
-        output += `*Published UTC:* ${article.published_utc}\n`;
-        output += `*Article URL:* ${article.article_url}\n\n`;
-
-        if (index < articles.length - 1) {
-          output += "---\n\n";
-        }
+      _0x4ee850.sendMessage(_0x48d603, {
+        'video': {
+          'url': _0x2f3fd2
+        },
+        'caption': _0x2313df + _0x7a5179,
+        'footer': "*Powered by Xgaga bots*",
+        'gifPlayback': true
+      }, {
+        'quoted': _0x170501
       });
-
-      return message.send(output, { quoted: message });
-    } catch (error) {
-      console.error(error);
-      return message.error(error, "*Failed to fetch forex news.*");
+    } catch (_0x28d32b) {
+      console.log("Awhhhhh Menu Error " + _0x28d32b);
+      _0x568ebc("Awhhhhh Menu Error " + _0x28d32b);
+    }
+  } else {
+    if (_0x2f3fd2.match(/\.(jpeg|png|jpg)$/i)) {
+      try {
+        _0x4ee850.sendMessage(_0x48d603, {
+          'image': {
+            'url': _0x2f3fd2
+          },
+          'caption': _0x2313df + _0x7a5179,
+          'footer': "*XGAGA BOTS*"
+        }, {
+          'quoted': _0x170501
+        });
+      } catch (_0x4001eb) {
+        console.log("Awhhhhh Menu Error " + _0x4001eb);
+        _0x568ebc("Awhhhhh Menu Error " + _0x4001eb);
+      }
+    } else {
+      _0x568ebc(_0x2313df + _0x7a5179);
     }
   }
-);
-zokou(
-  {
-    nomCom: "fxstatus",
-    category: "forex",
-    desc: "Fetches the current status of the forex market",
-    use: "fxstatus",
-  },
-  async (message) => {
-    try {
-      const apiUrl =
-        "https://api.polygon.io/v1/marketstatus/now?apiKey=Y4iTYoJANwppB8I3Bm4QVWdV5oXlvc45";
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      if (!data) {
-        return message.send("*Failed to fetch forex market status.*");
-      }
-
-      let output = "*Forex Market Status:*\n";
-      output += `After Hours: ${data.afterHours ? "Closed" : "Open"}\n`;
-      output += `Market: ${data.market ? "Open" : "Closed"}\n`;
-
-      const currencies = data.currencies;
-      output += "\n*Currencies:*\n";
-      output += `Crypto: ${currencies.crypto}\n`;
-      output += `FX: ${currencies.fx}\n`;
-
-      const exchanges = data.exchanges;
-      output += "\n*Exchanges:*\n";
-      output += `NASDAQ: ${exchanges.nasdaq}\n`;
-      output += `NYSE: ${exchanges.nyse}\n`;
-      output += `OTC: ${exchanges.otc}\n`;
-
-      const indicesGroups = data.indicesGroups;
-      output += "\n*Indices Groups:*\n";
-      output += `S&P: ${indicesGroups.s_and_p}\n`;
-      output += `Societe Generale: ${indicesGroups.societe_generale}\n`;
-      output += `MSCI: ${indicesGroups.msci}\n`;
-      output += `FTSE Russell: ${indicesGroups.ftse_russell}\n`;
-      output += `MStar: ${indicesGroups.mstar}\n`;
-      output += `MStarC: ${indicesGroups.mstarc}\n`;
-      output += `CCCY: ${indicesGroups.cccy}\n`;
-      output += `CGI: ${indicesGroups.cgi}\n`;
-      output += `NASDAQ: ${indicesGroups.nasdaq}\n`;
-      output += `Dow Jones: ${indicesGroups.dow_jones}\n`;
-
-      output += `\n*Server Time:* ${data.serverTime}\n`;
-
-      return message.send(output, { quoted: message });
-    } catch (error) {
-      console.error(error);
-      return message.error(error, "*Failed to fetch forex market status.*");
-    }
-  }
-);
-
-zokou(
-  {
-    nomCom: "fxpairs",
-    category: "forex",
-    desc: "Fetches a list of active forex currency pairs",
-    use: "fxpairs",
-  },
-  async (message) => {
-    try {
-      const apiUrl =
-        "https://api.polygon.io/v3/reference/tickers?market=fx&active=true&apiKey=Y4iTYoJANwppB8I3Bm4QVWdV5oXlvc45";
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      if (!data || !data.results || data.results.length === 0) {
-        return message.send("*Failed to fetch forex currency pairs.*");
-      }
-
-      let output = "*Active Forex Currency Pairs:*\n\n";
-      data.results.forEach((pair) => {
-        output += `${pair.ticker}: ${pair.name}\n`;
-      });
-
-      return message.send(output, { quoted: message });
-    } catch (error) {
-      console.error(error);
-      return message.error(error, "*Failed to fetch forex currency pairs.*");
-    }
-  }
-);
-zokou(
-  {
-    nomCom: "fxexchange",
-    category: "forex",
-    desc: "Fetches the latest foreign exchange rates against the US Dollar",
-    filename: __filename,
-    use: "fxexchange [currency_code]",
-  },
-  async (message, match) => {
-    try {
-      const currencyCode = match || "USD";
-      const apiUrl = `https://api.exchangerate-api.com/v4/latest/${currencyCode}`;
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      if (!data || !data.rates) {
-        return message.send(
-          `*Failed to fetch exchange rates for ${currencyCode}.*`
-        );
-      }
-
-      let output = `*Foreign Exchange Rates (${data.base})*\n\n`;
-      for (const [currency, rate] of Object.entries(data.rates)) {
-        output += `${currency}: ${rate.toFixed(4)}\n`;
-      }
-
-      return message.send(output, { quoted: message });
-    } catch (error) {
-      console.error(error);
-      return message.error(error, "*Failed to fetch exchange rates.*");
-    }
-  }
-);
-zokou(
-  {
-    nomCom: "stocktickers",
-    category: "forex",
-    desc: "Fetches a list of active stock tickers",
-    filename: __filename,
-    use: "stocktickers [limit]",
-  },
-  async (message, match) => {
-    try {
-      const limit = match || 100;
-      const apiUrl = `https://api.polygon.io/v3/reference/tickers?active=true&limit=${limit}&apiKey=Y4iTYoJANwppB8I3Bm4QVWdV5oXlvc45`;
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-
-      if (!data || !data.results || data.results.length === 0) {
-        return message.send("*No active stock tickers found.*");
-      }
-
-      let output = `*Active Stock Tickers (Limit: ${limit}):*\n\n`;
-      data.results.forEach((ticker) => {
-        output += `${ticker.ticker}: ${ticker.name}\n`;
-      });
-
-      return message.send(output, { quoted: message });
-    } catch (error) {
-      console.error(error);
-      return message.error(error, "*Failed to fetch stock tickers.*");
-    }
-  }
-);
+});
