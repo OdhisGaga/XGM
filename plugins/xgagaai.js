@@ -79,7 +79,7 @@ zokou({
     _0x59b3cb("Oops, an error occurred while processing your request");
   }
 });
-Hamza({
+zokou({
   'nomCom': "gpt",
   'reaction': '🎃',
   'categorie': 'AI'
