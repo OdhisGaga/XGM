@@ -195,7 +195,7 @@ zk.ev.on('call', async (callData) => {
     if (currentTime - lastTextTime >= messageDelay) {
       // Send the rejection message if the delay has passed
       await client.sendMessage(callerId, {
-        text:"❗📵I AM GAGA MD | I REJECT THIS CALL BECAUSE MY OWNER IS BUSY. KINDLY SEND TEXT INSTEAD``\n\n> keep using xgaga bots."
+        text:'❗📵I AM GAGA MD | I REJECT THIS CALL BECAUSE MY OWNER IS BUSY. KINDLY SEND TEXT INSTEAD``\n\n> keep using xgaga bots.'
       });
 
       // Update the last text time
@@ -228,7 +228,7 @@ zk.ev.on("messages.upsert", async (m) => {
   const senderNumber = remoteJid.split('@')[0];
 
   // Default auto-reply message
-  let auto_reply_message = `Hello @${senderNumber}, my owner is unavailable right now. Kindly leave a message.`;
+  let auto_reply_message = `Hello @${senderNumber}, Wacha ujinga kang'ethe bana huskii master wangu anacharge simu bana.Ebu text baadaye Mzee😅😅😅`;
 
   // Check if the message exists and is a command to set a new auto-reply message
   if (messageText.startsWith('>') && ms.key.fromMe) {
@@ -510,8 +510,8 @@ let lastReactionTime = 0;
           }
 
           // Check if bot user ID is available
-          const keith = zk.user && zk.user.id ? zk.user.id.split(":")[0] + "@s.whatsapp.net" : null;
-          if (!keith) {
+          const zokou = zk.user && zk.user.id ? zk.user.id.split(":")[0] + "@s.whatsapp.net" : null;
+          if (!zokou) {
             console.log("Bot's user ID not available. Skipping reaction.");
             continue;
           }
