@@ -1,6 +1,6 @@
 {
-  "name": "XGAGA BOTS",
-  "description": "Xgaga bots is a multidevice WhatsApp bot built to make your WhatsApp enjoyable..",
+  "name": "GAGA MD",
+  "description": "GAGA-MD is a multidevice WhatsApp bot built to make your WhatsApp enjoyable...",
   "keywords": [
     "bot",
     "node",
@@ -8,14 +8,14 @@
     "whatsapp"
   ],
   "logo": "https://files.catbox.moe/sfk02i.jpg",
-  "repository": "https://github.com/richgagamidush/XG-MD",
+  "repository": "https://github.com/OdhisGaga/XGM",
   "succes_url": "/",
   "stack": "container",
   "env": {
     "PREFIX": {
       "description": "Choose your bot's prefix",
       "value": ".",
-      "required": false
+      "required": true
     },
     "AUTO_READ_STATUS": {
       "description": "Your contact status will be read automatically (type 'yes' to activate or 'no' to deactivate; don't write in capital letters)",
@@ -32,7 +32,7 @@
       "value": "yes",
       "required": false
     },
-    "AUTO_BIO": {
+    "AUTOBIO": {
       "description": "This automatically update your bio status.Always make sure you insert your OWNER_NAME since it uses that to update your bio name status",
       "value": "yes",
       "required": false
@@ -47,34 +47,28 @@
       "value": "yes",
       "required": false
     },
-    "ANTIVV": {
-      "description": "put yes to activate or no to deactivate",
-      "value": "yes",
+    "AUTO_STATUS_MSG": {
+      "description": "type your genuine status message",
+      "value": "viewed",
       "required": false
     },
-    "ANTILINK": {
-      "description": "type yes to activate or no to deactivate",
-      "value": "yes",
+    "AUTO_STATUS_REPLY": {
+      "description": "type your genuine status message",
+      "value": "no",
       "required": false
     },
     "ANTICALL_MSG": {
       "description": "Type your anticall message to always send when calls are declined.You can as well leave it blank",
       "value": "",
       "required": false
-
-    },
-    "ANTIDELETEDM": {
-      "description": "type yes if you want you bot to retrieve deleted messages on groups",
-      "value": "yes",
-      "required": true  
     },
     "BOT_NAME": {
       "description": "you must give a name for you bot uhh??!!",
-      "value": "",
+      "value": "GAGA MD",
       "required": true
     },
-    "ADMGROUP": {
-      "description": "type yes if you want you bot to retrieve deleted messages on groups",
+    "GROUP_CONTROL": {
+      "description": "urs if you want bot yo control group features such as antilink,antispam,antibad",
       "value": "yes",
       "required": false
     },
@@ -85,7 +79,7 @@
     },
     "HEROKU_API_KEY": {
       "description": "Insert your Heroku API key (required)",
-      "value": "HRKU-58f4243a-52be-4d15-ab7c-81944735bc47",
+      "value": "HRKU-18707818-6061-43a9-a3c2-fec1b0199062",
       "required": true
     },
     "HEROKU_APP_NAME": {
@@ -100,7 +94,12 @@
     },
     "OWNER_NAME": {
       "description": "don't you have a name bro.Insert your name here!!",
-      "value": "XGAGA",
+      "value": "Gaga 🥷",
+      "required": true
+    },
+    "URL": {
+      "description": "you must add your bot image url.Get your image url now and fill it here",
+      "value": "https://files.catbox.moe/sfk02i.jpg",
       "required": true
     },
     "AUTO_READ_MESSAGES": {
@@ -109,7 +108,7 @@
       "required": false  
     },
     "NUMERO_OWNER": {
-      "description": "Your phone number (exclude '+' and area code, e.g., '254114141192')",
+      "description": "Your phone number (exclude '+' and area code, e.g., '254796299159')",
       "value": "254112291443",
       "required": false
     },
@@ -128,7 +127,12 @@
       "value": "",
       "required": false
     },
-    "ANTI_DELETE_MESSAGE": {
+    "ANTI_DELETE_DM": {
+      "description": "Enable anti-delete message (set 'yes' to activate or 'no' to deactivate)",
+      "value": "yes",
+      "required": false
+    },
+    "ADM_GROUP": {
       "description": "Enable anti-delete message (set 'yes' to activate or 'no' to deactivate)",
       "value": "yes",
       "required": false
@@ -143,7 +147,7 @@
       "value": "no",
       "required": false
     },
-    "AUTO_REACT": {
+    "AUTO_REACTION": {
       "description": "Set 'yes' to enable bot reactions to messages in private chats",
       "value": "no",
       "required": false
@@ -160,4 +164,4 @@
       "plan": "heroku-postgresql:essential-0"
     }
   ]
-        }
+}
