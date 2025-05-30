@@ -9,8 +9,8 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN git clone https://github.com/richgagamidush/GAGA-MD  /root/zokou
-WORKDIR /root/zokou/
+RUN git clone https://github.com/OdhisGaga/XGM  /root/Gaga_Bot
+WORKDIR /root/Gaga_Bot/
 
 
 COPY package.json .
